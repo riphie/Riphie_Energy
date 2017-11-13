@@ -72,20 +72,18 @@ energyBar:SetScript("OnUpdate", function(self, elapsed)
   local limit = 30 / GetFramerate()
 
   for bar, value in pairs(smoothing) do
-		local cur = bar:GetValue()
-		local barmin, barmax = bar:GetMinMaxValues()
-		local new = cur + min((value-cur)/10, max(value-cur, limit))
+    local cur = bar:GetValue()
+    local barmin, barmax = bar:GetMinMaxValues()
+    local new = cur + min((value-cur)/10, max(value-cur, limit))
 
-		if new ~= new then
-			new = value
-		end
+    if new ~= new then new = value end
 
 		bar:SetValue_(new)
 
     if cur == value or abs(cur - value) < 2 then
-			bar:SetValue_(value)
-			smoothing[bar] = nil
-		end
+      bar:SetValue_(value)
+      smoothing[bar] = nil
+    end
   end
 end)
 
