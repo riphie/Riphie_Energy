@@ -3,7 +3,7 @@ local A, L = ...
 local mediapath = "Interface\\AddOns\\"..A.."\\media\\"
 
 L.cfg = {
-  height = 28,
+  height = 15,
   width = 198,
 
   pos = { a1 = "CENTER", a2 = "CENTER", af = "UIParent", x = 0, y = -168 },
@@ -13,7 +13,7 @@ L.cfg = {
   text = {
     font = mediapath.."Expressway.ttf",
     size = 15,
-    pos = { a1 = "CENTER", a2 = "CENTER", af = "energyBar", x = 0, y = 0 },
+    pos = { a1 = "BOTTOM", a2 = "TOP", af = "energyBar", x = 0, y = -8 },
   },
 
   colors = {
