@@ -90,7 +90,6 @@ end)
 energyBar:RegisterEvent("PLAYER_ENTERING_WORLD")
 energyBar:RegisterEvent("PLAYER_SPECIALIZATION_CHANGED")
 energyBar:RegisterEvent("UNIT_AURA")
-energyBar:RegisterEvent("UNIT_POWER")
 energyBar:RegisterEvent("UNIT_POWER_FREQUENT")
 energyBar:SetScript("OnEvent", function(self, event, ...)
   local powerColor = powerColors[UnitPowerType("player")]
