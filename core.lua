@@ -55,14 +55,20 @@ energyBarText:SetJustifyH("RIGHT")
 local abs, max, min = math.abs, math.max, math.min
 energyBar:SetScript("OnUpdate", function(self, elapsed)
   local maxPower = UnitPowerMax("player", UnitPowerType("player"))
+  local _, class = UnitClass("player")
 
   -- hack to fix vengeance dh pain
-  if maxPower == 1000 then
+  if maxPower == 1000  and class == "DEMONHUNTER" then
+    maxPower = maxPower / 10
+  end
+
+  -- hack to fix death knight runic power
+  if maxPower == 1000  and class == "DEATHKNIGHT" then
     maxPower = maxPower / 10
   end
 
   -- hack to fix shadow priest insanity
-  if maxPower == 10000 then
+  if maxPower == 10000 and class == "PRIEST" then
     maxPower = maxPower / 100
   end
 
