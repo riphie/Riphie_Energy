@@ -25,7 +25,7 @@ local powerColors = {
 
 local smoothing = {}
 
-local energyBarBg = CreateFrame("Frame", "energyBarBg", UIParent)
+local energyBarBg = CreateFrame("Frame", "energyBarBg", UIParent, "BackdropTemplate")
 energyBarBg:SetHeight(cfg.height)
 energyBarBg:SetWidth(cfg.width)
 energyBarBg:SetPoint(cfg.pos.a1, cfg.pos.af, cfg.pos.a2, cfg.pos.x, cfg.pos.y)
