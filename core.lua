@@ -42,9 +42,9 @@ energyBar.SetValue_ = energyBar.SetValue
 energyBar.SetValue = function(self, value)
   if value ~= self:GetValue() or value == 0 then
     smoothing[self] = value
-	else
+  else
     smoothing[self] = nil
-	end
+  end
 end
 
 local energyBarText = energyBar:CreateFontString(nil, "OVERLAY")
@@ -58,13 +58,15 @@ energyBar:SetScript("OnUpdate", function(self, elapsed)
   local _, class = UnitClass("player")
 
   -- hack to fix vengeance dh pain
-  if maxPower == 1000  and class == "DEMONHUNTER" then
+  if maxPower == 1000 and class == "DEMONHUNTER" then
     maxPower = maxPower / 10
   end
 
   -- hack to fix death knight runic power
-  if maxPower == 1000  and class == "DEATHKNIGHT" then
-    maxPower = maxPower / 10
+  if class == "DEATHKNIGHT" then
+    if maxPower == 1000 || maxPower == 1150 then
+      maxPower = maxPower / 10
+    end
   end
 
   -- hack to fix shadow priest insanity
@@ -84,7 +86,7 @@ energyBar:SetScript("OnUpdate", function(self, elapsed)
 
     if new ~= new then new = value end
 
-		bar:SetValue_(new)
+    bar:SetValue_(new)
 
     if cur == value or abs(cur - value) < 2 then
       bar:SetValue_(value)
