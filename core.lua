@@ -64,7 +64,7 @@ energyBar:SetScript("OnUpdate", function(self, elapsed)
 
   -- hack to fix death knight runic power
   if class == "DEATHKNIGHT" then
-    if maxPower == 1000 || maxPower == 1150 then
+    if maxPower == 1000 or maxPower == 1150 then
       maxPower = maxPower / 10
     end
   end
