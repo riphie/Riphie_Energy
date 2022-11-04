@@ -57,6 +57,10 @@ energyBar:SetScript("OnUpdate", function(self, elapsed)
   local maxPower = UnitPowerMax("player", UnitPowerType("player"))
   local _, class = UnitClass("player")
 
+  if class == "WARRIOR" then
+    maxPower = maxPower / 10
+  end
+
   self:SetMinMaxValues(0, maxPower)
   self:SetValue(UnitPower("player"))
 
