@@ -1,6 +1,6 @@
 ## Interface: 100000
 
-## Title: |cff1784d1Riphie |r|cfffb4f4fEnergy|r
+## Title: Riphie Energy
 ## Author: Riphie
 
 config.lua
