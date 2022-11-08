@@ -50,15 +50,15 @@ end
 local energyBarText = energyBar:CreateFontString(nil, "OVERLAY")
 energyBarText:SetFont(cfg.text.font, cfg.text.size, "THINOUTLINE")
 energyBarText:SetPoint(cfg.text.pos.a1, cfg.text.pos.af, cfg.text.pos.a2, cfg.text.pos.x, cfg.text.pos.y)
-energyBarText:SetJustifyH "RIGHT"
+energyBarText:SetJustifyH("RIGHT")
 
 local abs, max, min = math.abs, math.max, math.min
 energyBar:SetScript("OnUpdate", function(self, elapsed)
-  local maxPower = UnitPowerMax("player", UnitPowerType "player")
-  local _, class = UnitClass "player"
+  local maxPower = UnitPowerMax("player", UnitPowerType("player"))
+  local _, class = UnitClass("player")
 
   self:SetMinMaxValues(0, maxPower)
-  self:SetValue(UnitPower "player")
+  self:SetValue(UnitPower("player"))
 
   local limit = 30 / GetFramerate()
 
@@ -80,12 +80,12 @@ energyBar:SetScript("OnUpdate", function(self, elapsed)
   end
 end)
 
-energyBar:RegisterEvent "PLAYER_ENTERING_WORLD"
-energyBar:RegisterEvent "PLAYER_SPECIALIZATION_CHANGED"
-energyBar:RegisterEvent "UNIT_AURA"
-energyBar:RegisterEvent "UNIT_POWER_FREQUENT"
+energyBar:RegisterEvent("PLAYER_ENTERING_WORLD")
+energyBar:RegisterEvent("PLAYER_SPECIALIZATION_CHANGED")
+energyBar:RegisterEvent("UNIT_AURA")
+energyBar:RegisterEvent("UNIT_POWER_FREQUENT")
 energyBar:SetScript("OnEvent", function(self, event, ...)
-  local powerColor = powerColors[UnitPowerType "player"]
+  local powerColor = powerColors[UnitPowerType("player")]
   energyBar:SetStatusBarColor(unpack(powerColor))
-  energyBarText:SetText(UnitPower "player")
+  energyBarText:SetText(UnitPower("player"))
 end)
