@@ -8,7 +8,8 @@ L.cfg = {
 
   pos = { a1 = "CENTER", a2 = "CENTER", af = "UIParent", x = 0, y = -162.5 },
 
-  texture = mediapath .. "SkullflowerNeon",
+  -- texture = mediapath .. "SkullflowerNeon",
+  texture = mediapath .. "SkullflowerGradient2",
 
   text = {
     font = mediapath .. "Expressway.ttf",
