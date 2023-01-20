@@ -4,11 +4,10 @@ local mediapath = "Interface\\AddOns\\" .. A .. "\\media\\"
 
 L.cfg = {
   height = 15,
-  width = 183,
+  width = 184,
 
   pos = { a1 = "CENTER", a2 = "CENTER", af = "UIParent", x = 0, y = -162.5 },
 
-  -- texture = mediapath .. "SkullflowerNeon",
   texture = mediapath .. "SkullflowerGradient2",
 
   text = {
