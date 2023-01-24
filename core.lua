@@ -25,7 +25,7 @@ local powerColors = {
 
 local smoothing = {}
 
-local energyBarBg = CreateFrame("Frame", "energyBarBg", UIParent, "BackdropTemplate")
+local energyBarBg = CreateFrame("Frame", "Riphie_Energy", UIParent, "BackdropTemplate")
 energyBarBg:SetHeight(cfg.height)
 energyBarBg:SetWidth(cfg.width)
 energyBarBg:SetPoint(cfg.pos.a1, cfg.pos.af, cfg.pos.a2, cfg.pos.x, cfg.pos.y)
@@ -51,6 +51,10 @@ local energyBarText = energyBar:CreateFontString(nil, "OVERLAY")
 energyBarText:SetFont(cfg.text.font, cfg.text.size, "THINOUTLINE")
 energyBarText:SetPoint(cfg.text.pos.a1, cfg.text.pos.af, cfg.text.pos.a2, cfg.text.pos.x, cfg.text.pos.y)
 energyBarText:SetJustifyH("RIGHT")
+
+if not cfg.text.enable then
+  energyBarText:Hide()
+end
 
 local abs, max, min = math.abs, math.max, math.min
 energyBar:SetScript("OnUpdate", function(self, elapsed)

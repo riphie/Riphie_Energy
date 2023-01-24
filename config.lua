@@ -3,17 +3,18 @@ local A, L = ...
 local mediapath = "Interface\\AddOns\\" .. A .. "\\media\\"
 
 L.cfg = {
-  height = 15,
+  height = 17,
   width = 184,
 
-  pos = { a1 = "CENTER", a2 = "CENTER", af = "UIParent", x = 0, y = -162.5 },
+  pos = { a1 = "CENTER", a2 = "CENTER", af = "UIParent", x = 0, y = -150 },
 
   texture = mediapath .. "SkullflowerGradient2",
 
   text = {
+    enable = false,
     font = mediapath .. "Expressway.ttf",
-    size = 15,
-    pos = { a1 = "BOTTOM", a2 = "TOP", af = "energyBar", x = 0, y = -8 },
+    size = 11,
+    pos = { a1 = "CENTER", a2 = "CENTER", af = "energyBar", x = 0, y = 0 },
   },
 
   colors = {
