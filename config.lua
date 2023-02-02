@@ -3,10 +3,10 @@ local A, L = ...
 local mediapath = "Interface\\AddOns\\" .. A .. "\\media\\"
 
 L.cfg = {
-  height = 17,
+  height = 10,
   width = 184,
 
-  pos = { a1 = "CENTER", a2 = "CENTER", af = "UIParent", x = 0, y = -150 },
+  pos = { a1 = "CENTER", a2 = "CENTER", af = "UIParent", x = 0, y = -160 },
 
   texture = mediapath .. "SkullflowerGradient2",
 
@@ -18,7 +18,7 @@ L.cfg = {
   },
 
   colors = {
-    bg = { 0 / 255, 0 / 255, 0 / 255, 1 },
+    bg = { 0 / 255, 0 / 255, 0 / 255, 0.5 },
 
     mana = { 0 / 255, 190 / 255, 230 / 255, 1 },
     rage = { 65 / 255, 65 / 255, 65 / 255, 1 },
