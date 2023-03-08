@@ -6,7 +6,7 @@ L.cfg = {
   height = 10,
   width = 184,
 
-  pos = { a1 = "CENTER", a2 = "CENTER", af = "UIParent", x = 0, y = -160 },
+  pos = { a1 = "CENTER", a2 = "CENTER", af = "UIParent", x = 0, y = -133 },
 
   texture = mediapath .. "SkullflowerGradient2",
 
