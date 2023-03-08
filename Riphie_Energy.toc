@@ -2,6 +2,7 @@
 
 ## Title: Riphie Energy
 ## Author: Riphie
+## RequiredDeps: SharedMedia_Riphie
 
 config.lua
 core.lua

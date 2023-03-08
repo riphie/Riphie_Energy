@@ -1,6 +1,7 @@
 local A, L = ...
 
-local mediapath = "Interface\\AddOns\\" .. A .. "\\media\\"
+local LibStub = LibStub
+local LSM = LibStub("LibSharedMedia-3.0")
 
 L.cfg = {
   height = 10,
@@ -8,11 +9,11 @@ L.cfg = {
 
   pos = { a1 = "CENTER", a2 = "CENTER", af = "UIParent", x = 0, y = -133 },
 
-  texture = mediapath .. "SkullflowerGradient2",
+  texture = LSM:Fetch("statusbar", "SkullflowerGradient2"),
 
   text = {
     enable = false,
-    font = mediapath .. "Expressway.ttf",
+    font = LSM:Fetch("font", "Expressway"),
     size = 11,
     pos = { a1 = "CENTER", a2 = "CENTER", af = "energyBar", x = 0, y = 0 },
   },
