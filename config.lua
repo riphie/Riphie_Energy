@@ -4,7 +4,7 @@ local LibStub = LibStub
 local LSM = LibStub("LibSharedMedia-3.0")
 
 L.cfg = {
-  height = 12,
+  height = 14,
   width = 184,
 
   pos = { a1 = "CENTER", a2 = "CENTER", af = "UIParent", x = 0, y = -131 },
@@ -37,5 +37,5 @@ L.cfg = {
 local _, class = UnitClass("player")
 
 if class == "WARRIOR" then
-  L.cfg.width = 252
+  L.cfg.width = 350
 end
