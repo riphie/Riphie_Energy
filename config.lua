@@ -4,10 +4,10 @@ local LibStub = LibStub
 local LSM = LibStub("LibSharedMedia-3.0")
 
 L.cfg = {
-  height = 10,
+  height = 12,
   width = 184,
 
-  pos = { a1 = "CENTER", a2 = "CENTER", af = "UIParent", x = 0, y = -133 },
+  pos = { a1 = "CENTER", a2 = "CENTER", af = "UIParent", x = 0, y = -131 },
 
   texture = LSM:Fetch("statusbar", "SkullflowerGradient2"),
 
