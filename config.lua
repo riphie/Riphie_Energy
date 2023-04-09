@@ -19,7 +19,7 @@ L.cfg = {
   },
 
   colors = {
-    bg = { 0 / 255, 0 / 255, 0 / 255, 0.5 },
+    bg = { 0 / 255, 0 / 255, 0 / 255, 1 },
 
     mana = { 0 / 255, 190 / 255, 230 / 255, 1 },
     rage = { 65 / 255, 65 / 255, 65 / 255, 1 },
@@ -33,3 +33,9 @@ L.cfg = {
     pain = { 65 / 255, 65 / 255, 65 / 255, 1 },
   },
 }
+
+local _, class = UnitClass("player")
+
+if class == "WARRIOR" then
+  L.cfg.width = 252
+end
