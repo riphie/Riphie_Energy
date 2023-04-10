@@ -7,7 +7,7 @@ L.cfg = {
   height = 14,
   width = 184,
 
-  pos = { a1 = "CENTER", a2 = "CENTER", af = "UIParent", x = 0, y = -131 },
+  pos = { a1 = "CENTER", a2 = "CENTER", af = "UIParent", x = 0, y = -130 },
 
   texture = LSM:Fetch("statusbar", "SkullflowerGradient2"),
 
@@ -15,7 +15,7 @@ L.cfg = {
     enable = false,
     font = LSM:Fetch("font", "Expressway"),
     size = 11,
-    pos = { a1 = "CENTER", a2 = "CENTER", af = "energyBar", x = 0, y = 0 },
+    pos = { a1 = "CENTER", a2 = "CENTER", af = "energyBar", x = 0, y = 1 },
   },
 
   colors = {
@@ -38,4 +38,6 @@ local _, class = UnitClass("player")
 
 if class == "WARRIOR" then
   L.cfg.width = 350
+
+  L.cfg.text.enable = true
 end
