@@ -7,7 +7,7 @@ L.cfg = {
   height = 14,
   width = 184,
 
-  pos = { a1 = "CENTER", a2 = "CENTER", af = "UIParent", x = 0, y = -175 },
+  pos = { a1 = "BOTTOM", a2 = "CENTER", af = "UIParent", x = 0, y = -155 },
 
   texture = LSM:Fetch("statusbar", "SkullflowerGradient2"),
 
@@ -42,8 +42,8 @@ if class == "DEMONHUNTER" then
 end
 
 if class == "ROGUE" then
-  L.cfg.height = 7
-  L.cfg.width = 310
+  L.cfg.height = 6
+  L.cfg.width = 312
 end
 
 if class == "WARRIOR" then
