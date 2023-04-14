@@ -36,14 +36,14 @@ L.cfg = {
 
 local _, class = UnitClass("player")
 
-if class == "DEMONHUNTER" then
-  L.cfg.height = 7
+if class == "DEMONaaaaaHUNTER" then
+  L.cfg.height = 6
   L.cfg.width = 350
 end
 
 if class == "ROGUE" then
   L.cfg.height = 6
-  L.cfg.width = 312
+  L.cfg.width = 314
 end
 
 if class == "WARRIOR" then
