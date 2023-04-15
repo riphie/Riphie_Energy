@@ -4,7 +4,7 @@ local LibStub = LibStub
 local LSM = LibStub("LibSharedMedia-3.0")
 
 L.cfg = {
-  height = 14,
+  height = 6,
   width = 184,
 
   pos = { a1 = "BOTTOM", a2 = "CENTER", af = "UIParent", x = 0, y = -155 },
@@ -14,8 +14,8 @@ L.cfg = {
   text = {
     enable = false,
     font = LSM:Fetch("font", "Expressway"),
-    size = 11,
-    pos = { a1 = "CENTER", a2 = "CENTER", af = "energyBar", x = 0, y = 1 },
+    size = 12,
+    pos = { a1 = "CENTER", a2 = "CENTER", af = "energyBar", x = 0, y = 0 },
   },
 
   colors = {
@@ -36,18 +36,14 @@ L.cfg = {
 
 local _, class = UnitClass("player")
 
-if class == "DEMONaaaaaHUNTER" then
-  L.cfg.height = 6
+if class == "DEMONHUNTER" then
   L.cfg.width = 350
 end
 
 if class == "ROGUE" then
-  L.cfg.height = 6
   L.cfg.width = 314
 end
 
 if class == "WARRIOR" then
-  L.cfg.width = 350
-
-  L.cfg.text.enable = true
+  L.cfg.width = 353
 end
