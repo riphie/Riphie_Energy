@@ -40,6 +40,10 @@ if class == "DEMONHUNTER" then
   L.cfg.width = 350
 end
 
+if class == "EVOKER" then
+  L.cfg.width = 353
+end
+
 if class == "ROGUE" then
   L.cfg.width = 314
 end
