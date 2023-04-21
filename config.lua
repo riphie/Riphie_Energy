@@ -37,7 +37,7 @@ L.cfg = {
 local _, class = UnitClass("player")
 
 if class == "DEMONHUNTER" then
-  L.cfg.width = 350
+  L.cfg.width = 353
 end
 
 if class == "EVOKER" then
