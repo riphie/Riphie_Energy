@@ -38,14 +38,16 @@ local _, class = UnitClass("player")
 
 if class == "DEMONHUNTER" then
   L.cfg.width = 353
+  L.cfg.pos.y = -154.5
 end
 
 if class == "EVOKER" then
   L.cfg.width = 353
+  L.cfg.pos.y = -154.5
 end
 
 if class == "ROGUE" then
-  L.cfg.width = 314
+  L.cfg.width = 353
 end
 
 if class == "WARRIOR" then
