@@ -36,7 +36,7 @@ L.cfg = {
 
 L.F = {}
 
-function UpdateConfiguration()
+local function UpdateConfiguration()
   local _, class = UnitClass("player")
 
   if class == "DEMONHUNTER" then
