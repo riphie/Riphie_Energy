@@ -54,17 +54,11 @@ function UpdateConfiguration()
   end
 
   if class == "ROGUE" then
-    local known = IsSpellKnown(277925) -- Shuriken Storm
-
-    print(known)
-
-    if known then
+    if IsSpellKnown(277925) then
       L.cfg.width = 353
     else
       L.cfg.width = 314
     end
   end
-
-  print(L.cfg.width)
 end
 L.F.UpdateConfiguration = UpdateConfiguration
