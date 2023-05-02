@@ -34,22 +34,37 @@ L.cfg = {
   },
 }
 
-local _, class = UnitClass("player")
+L.F = {}
 
-if class == "DEMONHUNTER" then
-  L.cfg.width = 353
-  L.cfg.pos.y = -154.5
-end
+function UpdateConfiguration()
+  local _, class = UnitClass("player")
 
-if class == "EVOKER" then
-  L.cfg.width = 353
-  L.cfg.pos.y = -154.5
-end
+  if class == "DEMONHUNTER" then
+    L.cfg.width = 353
+    L.cfg.pos.y = -154.5
+  end
 
-if class == "ROGUE" then
-  L.cfg.width = 353
-end
+  if class == "EVOKER" then
+    L.cfg.width = 353
+    L.cfg.pos.y = -154.5
+  end
 
-if class == "WARRIOR" then
-  L.cfg.width = 353
+  if class == "WARRIOR" then
+    L.cfg.width = 353
+  end
+
+  if class == "ROGUE" then
+    local known = IsSpellKnown(277925) -- Shuriken Storm
+
+    print(known)
+
+    if known then
+      L.cfg.width = 353
+    else
+      L.cfg.width = 314
+    end
+  end
+
+  print(L.cfg.width)
 end
+L.F.UpdateConfiguration = UpdateConfiguration

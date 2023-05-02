@@ -105,8 +105,19 @@ energyBar:RegisterEvent("PLAYER_ENTERING_WORLD")
 energyBar:RegisterEvent("PLAYER_SPECIALIZATION_CHANGED")
 energyBar:RegisterEvent("UNIT_AURA")
 energyBar:RegisterEvent("UNIT_POWER_FREQUENT")
+energyBar:RegisterEvent("TRAIT_CONFIG_UPDATED")
 energyBar:SetScript("OnEvent", function(self, event, ...)
   local powerColor = powerColors[UnitPowerType("player")]
   energyBar:SetStatusBarColor(unpack(powerColor))
   energyBarText:SetText(UnitPower("player"))
+
+  if event == "PLAYER_ENTERING_WORLD" or event == "TRAIT_CONFIG_UPDATED" then
+    L.F.UpdateConfiguration()
+
+    energyBarBg:SetHeight(cfg.height)
+    energyBarBg:SetWidth(cfg.width)
+    energyBarBg:SetPoint(cfg.pos.a1, cfg.pos.af, cfg.pos.a2, cfg.pos.x, cfg.pos.y)
+
+    return
+  end
 end)
