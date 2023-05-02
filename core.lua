@@ -78,6 +78,10 @@ energyBar:SetScript("OnUpdate", function(self, elapsed)
     maxPower = maxPower / 10
   end
 
+  if class == "DRUID" and powerType == "RAGE" then
+    maxPower = maxPower / 10
+  end
+
   self:SetMinMaxValues(0, maxPower)
   self:SetValue(UnitPower("player"))
 
