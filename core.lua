@@ -58,27 +58,27 @@ end
 
 local abs, max, min = math.abs, math.max, math.min
 energyBar:SetScript("OnUpdate", function(self, elapsed)
+  local _, class = UnitClass("player")
   local _, powerType = UnitPowerType("player")
   local maxPower = UnitPowerMax("player", UnitPowerType("player"))
-  local _, class = UnitClass("player")
-
-  if class == "WARRIOR" then
-    maxPower = maxPower / 10
-  end
 
   if class == "DEATHKNIGHT" then
     maxPower = maxPower / 10
+  end
+
+  if class == "DRUID" then
+    if powerType == "LUNAR_POWER" then
+      maxPower = maxPower / 10
+    elseif powerType == "RAGE" then
+      maxPower = maxPower / 10
+    end
   end
 
   if class == "PRIEST" and powerType == "INSANITY" then
     maxPower = maxPower / 100
   end
 
-  if class == "DRUID" and powerType == "LUNAR_POWER" then
-    maxPower = maxPower / 10
-  end
-
-  if class == "DRUID" and powerType == "RAGE" then
+  if class == "WARRIOR" then
     maxPower = maxPower / 10
   end
 
