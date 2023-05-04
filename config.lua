@@ -12,7 +12,7 @@ L.cfg = {
   texture = LSM:Fetch("statusbar", "SkullflowerGradient2"),
 
   text = {
-    enable = false,
+    enable = true,
     font = LSM:Fetch("font", "Expressway"),
     size = 12,
     pos = { a1 = "CENTER", a2 = "CENTER", af = "energyBar", x = 0, y = 0 },
@@ -21,6 +21,7 @@ L.cfg = {
   colors = {
     bg = { 0 / 255, 0 / 255, 0 / 255, 1 },
 
+    -- TODO: update colors
     mana = { 0 / 255, 190 / 255, 230 / 255, 1 },
     rage = { 255 / 255, 0 / 255, 0 / 255, 1 },
     focus = { 230 / 255, 140 / 255, 60 / 255, 1 },
@@ -49,16 +50,16 @@ local function UpdateConfiguration()
     L.cfg.pos.y = -154.5
   end
 
-  if class == "WARRIOR" then
-    L.cfg.width = 353
-  end
-
   if class == "ROGUE" then
     if IsSpellKnown(277925) then
       L.cfg.width = 353
     else
       L.cfg.width = 314
     end
+  end
+
+  if class == "WARRIOR" then
+    L.cfg.width = 353
   end
 end
 L.F.UpdateConfiguration = UpdateConfiguration
