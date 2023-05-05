@@ -12,7 +12,7 @@ L.cfg = {
   texture = LSM:Fetch("statusbar", "SkullflowerGradient2"),
 
   text = {
-    enable = true,
+    enable = false,
     font = LSM:Fetch("font", "Expressway"),
     size = 12,
     pos = { a1 = "CENTER", a2 = "CENTER", af = "energyBar", x = 0, y = 0 },
