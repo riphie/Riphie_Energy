@@ -26,8 +26,8 @@ local powerColors = {
 local smoothing = {}
 
 local energyBarBg = CreateFrame("Frame", "Riphie_Energy", UIParent, "BackdropTemplate")
-PixelUtil.SetHeight(energyBarBg, cfg.height, 1)
-PixelUtil.SetWidth(energyBarBg, cfg.width, 1)
+PixelUtil.SetHeight(energyBarBg, cfg.height)
+PixelUtil.SetWidth(energyBarBg, cfg.width)
 PixelUtil.SetPoint(energyBarBg, cfg.pos.a1, cfg.pos.af, cfg.pos.a2, cfg.pos.x, cfg.pos.y, 1, 1)
 energyBarBg:SetBackdrop(backdrop_tab)
 energyBarBg:SetBackdropColor(unpack(cfg.colors.bg))
