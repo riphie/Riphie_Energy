@@ -26,17 +26,17 @@ local powerColors = {
 local smoothing = {}
 
 local energyBarBg = CreateFrame("Frame", "Riphie_Energy", UIParent, "BackdropTemplate")
-energyBarBg:SetHeight(cfg.height)
-energyBarBg:SetWidth(cfg.width)
-energyBarBg:SetPoint(cfg.pos.a1, cfg.pos.af, cfg.pos.a2, cfg.pos.x, cfg.pos.y)
+PixelUtil.SetHeight(energyBarBg, cfg.height, 1)
+PixelUtil.SetWidth(energyBarBg, cfg.width, 1)
+PixelUtil.SetPoint(energyBarBg, cfg.pos.a1, cfg.pos.af, cfg.pos.a2, cfg.pos.x, cfg.pos.y, 1, 1)
 energyBarBg:SetBackdrop(backdrop_tab)
 energyBarBg:SetBackdropColor(unpack(cfg.colors.bg))
 energyBarBg:SetBackdropBorderColor(0, 0, 0, 0)
 
 local energyBar = CreateFrame("StatusBar", "energyBar", energyBarBg)
 energyBar:SetStatusBarTexture(cfg.texture)
-energyBar:SetPoint("TOPLEFT", energyBarBg, "TOPLEFT", 1, -1)
-energyBar:SetPoint("BOTTOMRIGHT", energyBarBg, "BOTTOMRIGHT", -1, 1)
+PixelUtil.SetPoint(energyBar, "TOPLEFT", energyBarBg, "TOPLEFT", 1, -1, 1, 1)
+PixelUtil.SetPoint(energyBar, "BOTTOMRIGHT", energyBarBg, "BOTTOMRIGHT", -1, 1)
 
 energyBar.SetValue_ = energyBar.SetValue
 energyBar.SetValue = function(self, value)
@@ -49,8 +49,17 @@ end
 
 local energyBarText = energyBar:CreateFontString(nil, "OVERLAY")
 energyBarText:SetFont(cfg.text.font, cfg.text.size, "THINOUTLINE")
-energyBarText:SetPoint(cfg.text.pos.a1, cfg.text.pos.af, cfg.text.pos.a2, cfg.text.pos.x, cfg.text.pos.y)
-energyBarText:SetJustifyH("RIGHT")
+PixelUtil.SetPoint(
+  energyBarText,
+  cfg.text.pos.a1,
+  cfg.text.pos.af,
+  cfg.text.pos.a2,
+  cfg.text.pos.x,
+  cfg.text.pos.y,
+  1,
+  1
+)
+energyBarText:SetJustifyH("CENTER")
 
 if not cfg.text.enable then
   energyBarText:Hide()
@@ -118,10 +127,8 @@ energyBar:SetScript("OnEvent", function(self, event, ...)
   if event == "PLAYER_ENTERING_WORLD" or event == "TRAIT_CONFIG_UPDATED" then
     L.F.UpdateConfiguration()
 
-    energyBarBg:SetHeight(cfg.height)
-    energyBarBg:SetWidth(cfg.width)
-    energyBarBg:SetPoint(cfg.pos.a1, cfg.pos.af, cfg.pos.a2, cfg.pos.x, cfg.pos.y)
-
-    return
+    PixelUtil.SetHeight(energyBarBg, cfg.height, 1)
+    PixelUtil.SetWidth(energyBarBg, cfg.width, 1)
+    PixelUtil.SetPoint(energyBarBg, cfg.pos.a1, cfg.pos.af, cfg.pos.a2, cfg.pos.x, cfg.pos.y, 1, 1)
   end
 end)
