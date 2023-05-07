@@ -5,7 +5,7 @@ local LSM = LibStub("LibSharedMedia-3.0")
 
 L.cfg = {
   height = 6,
-  width = 184,
+  width = 353,
 
   pos = { a1 = "BOTTOM", a2 = "CENTER", af = "UIParent", x = 0, y = -158 },
 
@@ -40,24 +40,10 @@ L.F = {}
 local function UpdateConfiguration()
   local _, class = UnitClass("player")
 
-  if class == "DEMONHUNTER" then
-    L.cfg.width = 353
-  end
-
-  if class == "EVOKER" then
-    L.cfg.width = 353
-  end
-
   if class == "ROGUE" then
-    if IsSpellKnown(277925) then
-      L.cfg.width = 353
-    else
+    if not IsSpellKnown(277925) then
       L.cfg.width = 314
     end
-  end
-
-  if class == "WARRIOR" then
-    L.cfg.width = 353
   end
 end
 L.F.UpdateConfiguration = UpdateConfiguration
