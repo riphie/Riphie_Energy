@@ -3,21 +3,11 @@ local A, L = ...
 local LibStub = LibStub
 local LSM = LibStub("LibSharedMedia-3.0")
 
-local ppUiScale = 768 / GetScreenHeight()
-local curUiScale = GetCVar("uiscale")
-local vpixelSize = ppUiScale / curUiScale
-
 L.cfg = {
-  height = 6 * vpixelSize,
-  width = 184 * vpixelSize,
+  height = 6,
+  width = 184,
 
-  pos = {
-    a1 = "BOTTOM",
-    a2 = "CENTER",
-    af = "UIParent",
-    x = 0 * vpixelSize,
-    y = -180 * vpixelSize,
-  },
+  pos = { a1 = "BOTTOM", a2 = "CENTER", af = "UIParent", x = 0, y = -158 },
 
   texture = LSM:Fetch("statusbar", "SkullflowerGradient2"),
 
@@ -25,13 +15,7 @@ L.cfg = {
     enable = false,
     font = LSM:Fetch("font", "Expressway"),
     size = 12,
-    pos = {
-      a1 = "CENTER",
-      a2 = "CENTER",
-      af = "energyBar",
-      x = 0,
-      y = 0,
-    },
+    pos = { a1 = "CENTER", a2 = "CENTER", af = "energyBar", x = 0, y = 0 },
   },
 
   colors = {
