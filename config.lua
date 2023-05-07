@@ -3,11 +3,21 @@ local A, L = ...
 local LibStub = LibStub
 local LSM = LibStub("LibSharedMedia-3.0")
 
-L.cfg = {
-  height = 6,
-  width = 184,
+local ppUiScale = 768 / GetScreenHeight()
+local curUiScale = GetCVar("uiscale")
+local vpixelSize = ppUiScale / curUiScale
 
-  pos = { a1 = "BOTTOM", a2 = "CENTER", af = "UIParent", x = 0, y = -153.8 },
+L.cfg = {
+  height = 6 * vpixelSize,
+  width = 184 * vpixelSize,
+
+  pos = {
+    a1 = "BOTTOM",
+    a2 = "CENTER",
+    af = "UIParent",
+    x = 0 * vpixelSize,
+    y = -180 * vpixelSize,
+  },
 
   texture = LSM:Fetch("statusbar", "SkullflowerGradient2"),
 
@@ -15,7 +25,13 @@ L.cfg = {
     enable = false,
     font = LSM:Fetch("font", "Expressway"),
     size = 12,
-    pos = { a1 = "CENTER", a2 = "CENTER", af = "energyBar", x = 0, y = 0 },
+    pos = {
+      a1 = "CENTER",
+      a2 = "CENTER",
+      af = "energyBar",
+      x = 0,
+      y = 0,
+    },
   },
 
   colors = {
@@ -42,12 +58,10 @@ local function UpdateConfiguration()
 
   if class == "DEMONHUNTER" then
     L.cfg.width = 353
-    L.cfg.pos.y = -154.5
   end
 
   if class == "EVOKER" then
     L.cfg.width = 353
-    L.cfg.pos.y = -154.5
   end
 
   if class == "ROGUE" then
