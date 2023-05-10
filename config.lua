@@ -41,7 +41,9 @@ local function UpdateConfiguration()
   local _, class = UnitClass("player")
 
   if class == "ROGUE" then
-    if not IsSpellKnown(277925) then
+    if IsSpellKnown(277925) then
+      L.cfg.width = 353
+    else
       L.cfg.width = 314
     end
   end

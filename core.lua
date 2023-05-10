@@ -1,5 +1,4 @@
 local A, L = ...
-local cfg = L.cfg
 
 local backdrop_tab = {
   bgFile = "Interface\\ChatFrame\\ChatFrameBackground",
@@ -11,30 +10,30 @@ local backdrop_tab = {
 }
 
 local powerColors = {
-  [0] = cfg.colors.mana,
-  [1] = cfg.colors.rage,
-  [2] = cfg.colors.focus,
-  [3] = cfg.colors.energy,
-  [6] = cfg.colors.runicpower,
-  [8] = cfg.colors.lunarpower,
-  [11] = cfg.colors.maelstrom,
-  [13] = cfg.colors.insanity,
-  [17] = cfg.colors.fury,
-  [18] = cfg.colors.pain,
+  [0] = L.cfg.colors.mana,
+  [1] = L.cfg.colors.rage,
+  [2] = L.cfg.colors.focus,
+  [3] = L.cfg.colors.energy,
+  [6] = L.cfg.colors.runicpower,
+  [8] = L.cfg.colors.lunarpower,
+  [11] = L.cfg.colors.maelstrom,
+  [13] = L.cfg.colors.insanity,
+  [17] = L.cfg.colors.fury,
+  [18] = L.cfg.colors.pain,
 }
 
 local smoothing = {}
 
 local energyBarBg = CreateFrame("Frame", "Riphie_Energy", UIParent, "BackdropTemplate")
-PixelUtil.SetHeight(energyBarBg, cfg.height)
-PixelUtil.SetWidth(energyBarBg, cfg.width)
-PixelUtil.SetPoint(energyBarBg, cfg.pos.a1, cfg.pos.af, cfg.pos.a2, cfg.pos.x, cfg.pos.y, 1, 1)
+PixelUtil.SetHeight(energyBarBg, L.cfg.height)
+PixelUtil.SetWidth(energyBarBg, L.cfg.width)
+PixelUtil.SetPoint(energyBarBg, L.cfg.pos.a1, L.cfg.pos.af, L.cfg.pos.a2, L.cfg.pos.x, L.cfg.pos.y, 1, 1)
 energyBarBg:SetBackdrop(backdrop_tab)
-energyBarBg:SetBackdropColor(unpack(cfg.colors.bg))
+energyBarBg:SetBackdropColor(unpack(L.cfg.colors.bg))
 energyBarBg:SetBackdropBorderColor(0, 0, 0, 0)
 
 local energyBar = CreateFrame("StatusBar", "energyBar", energyBarBg)
-energyBar:SetStatusBarTexture(cfg.texture)
+energyBar:SetStatusBarTexture(L.cfg.texture)
 PixelUtil.SetPoint(energyBar, "TOPLEFT", energyBarBg, "TOPLEFT", 1, -1, 1, 1)
 PixelUtil.SetPoint(energyBar, "BOTTOMRIGHT", energyBarBg, "BOTTOMRIGHT", -1, 1)
 
@@ -48,20 +47,20 @@ energyBar.SetValue = function(self, value)
 end
 
 local energyBarText = energyBar:CreateFontString(nil, "OVERLAY")
-energyBarText:SetFont(cfg.text.font, cfg.text.size, "THINOUTLINE")
+energyBarText:SetFont(L.cfg.text.font, L.cfg.text.size, "THINOUTLINE")
 PixelUtil.SetPoint(
   energyBarText,
-  cfg.text.pos.a1,
-  cfg.text.pos.af,
-  cfg.text.pos.a2,
-  cfg.text.pos.x,
-  cfg.text.pos.y,
+  L.cfg.text.pos.a1,
+  L.cfg.text.pos.af,
+  L.cfg.text.pos.a2,
+  L.cfg.text.pos.x,
+  L.cfg.text.pos.y,
   1,
   1
 )
 energyBarText:SetJustifyH("CENTER")
 
-if not cfg.text.enable then
+if not L.cfg.text.enable then
   energyBarText:Hide()
 end
 
@@ -127,8 +126,8 @@ energyBar:SetScript("OnEvent", function(self, event, ...)
   if event == "PLAYER_ENTERING_WORLD" or event == "TRAIT_CONFIG_UPDATED" then
     L.F.UpdateConfiguration()
 
-    PixelUtil.SetHeight(energyBarBg, cfg.height, 1)
-    PixelUtil.SetWidth(energyBarBg, cfg.width, 1)
-    PixelUtil.SetPoint(energyBarBg, cfg.pos.a1, cfg.pos.af, cfg.pos.a2, cfg.pos.x, cfg.pos.y, 1, 1)
+    PixelUtil.SetHeight(energyBarBg, L.cfg.height, 1)
+    PixelUtil.SetWidth(energyBarBg, L.cfg.width, 1)
+    PixelUtil.SetPoint(energyBarBg, L.cfg.pos.a1, L.cfg.pos.af, L.cfg.pos.a2, L.cfg.pos.x, L.cfg.pos.y, 1, 1)
   end
 end)
