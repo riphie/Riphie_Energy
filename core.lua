@@ -122,12 +122,4 @@ energyBar:SetScript("OnEvent", function(self, event, ...)
   local powerColor = powerColors[UnitPowerType("player")]
   energyBar:SetStatusBarColor(unpack(powerColor))
   energyBarText:SetText(UnitPower("player"))
-
-  if event == "PLAYER_ENTERING_WORLD" or event == "TRAIT_CONFIG_UPDATED" then
-    L.F.UpdateConfiguration()
-
-    PixelUtil.SetHeight(energyBarBg, L.cfg.height, 1)
-    PixelUtil.SetWidth(energyBarBg, L.cfg.width, 1)
-    PixelUtil.SetPoint(energyBarBg, L.cfg.pos.a1, L.cfg.pos.af, L.cfg.pos.a2, L.cfg.pos.x, L.cfg.pos.y, 1, 1)
-  end
 end)
