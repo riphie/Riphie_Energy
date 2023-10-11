@@ -58,7 +58,7 @@ PixelUtil.SetPoint(
   1,
   1
 )
-energyBarText:SetJustifyH("CENTER")
+energyBarText:SetJustifyH "CENTER"
 
 if not L.cfg.text.enable then
   energyBarText:Hide()
@@ -66,9 +66,9 @@ end
 
 local abs, max, min = math.abs, math.max, math.min
 energyBar:SetScript("OnUpdate", function(self, elapsed)
-  local _, class = UnitClass("player")
-  local _, powerType = UnitPowerType("player")
-  local maxPower = UnitPowerMax("player", UnitPowerType("player"))
+  local _, class = UnitClass "player"
+  local _, powerType = UnitPowerType "player"
+  local maxPower = UnitPowerMax("player", UnitPowerType "player")
 
   if class == "DEATHKNIGHT" then
     maxPower = maxPower / 10
@@ -91,7 +91,7 @@ energyBar:SetScript("OnUpdate", function(self, elapsed)
   end
 
   self:SetMinMaxValues(0, maxPower)
-  self:SetValue(UnitPower("player"))
+  self:SetValue(UnitPower "player")
 
   local limit = 30 / GetFramerate()
 
@@ -113,13 +113,13 @@ energyBar:SetScript("OnUpdate", function(self, elapsed)
   end
 end)
 
-energyBar:RegisterEvent("PLAYER_ENTERING_WORLD")
-energyBar:RegisterEvent("PLAYER_SPECIALIZATION_CHANGED")
-energyBar:RegisterEvent("UNIT_AURA")
-energyBar:RegisterEvent("UNIT_POWER_FREQUENT")
-energyBar:RegisterEvent("TRAIT_CONFIG_UPDATED")
+energyBar:RegisterEvent "PLAYER_ENTERING_WORLD"
+energyBar:RegisterEvent "PLAYER_SPECIALIZATION_CHANGED"
+energyBar:RegisterEvent "UNIT_AURA"
+energyBar:RegisterEvent "UNIT_POWER_FREQUENT"
+energyBar:RegisterEvent "TRAIT_CONFIG_UPDATED"
 energyBar:SetScript("OnEvent", function(self, event, ...)
-  local powerColor = powerColors[UnitPowerType("player")]
+  local powerColor = powerColors[UnitPowerType "player"]
   energyBar:SetStatusBarColor(unpack(powerColor))
-  energyBarText:SetText(UnitPower("player"))
+  energyBarText:SetText(UnitPower "player")
 end)

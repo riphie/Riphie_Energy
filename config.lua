@@ -1,7 +1,7 @@
 local A, L = ...
 
 local LibStub = LibStub
-local LSM = LibStub("LibSharedMedia-3.0")
+local LSM = LibStub "LibSharedMedia-3.0"
 
 L.cfg = {
   height = 6,
