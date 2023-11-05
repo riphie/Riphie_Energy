@@ -34,3 +34,18 @@ L.cfg = {
     pain = { 255 / 255, 110 / 255, 30 / 255, 1 },
   },
 }
+
+L.F = {}
+
+local function UpdateConfiguration()
+  local _, class = UnitClass("player")
+
+  if class == "ROGUE" then
+    if IsSpellKnown(277925) then
+      L.cfg.width = 353
+    else
+      L.cfg.width = 314
+    end
+  end
+end
+L.F.UpdateConfiguration = UpdateConfiguration
