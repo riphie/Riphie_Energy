@@ -1,4 +1,5 @@
 local A, L = ...
+local abs, max, min = math.abs, math.max, math.min
 
 local backdrop_tab = {
   bgFile = "Interface\\ChatFrame\\ChatFrameBackground",
@@ -64,8 +65,7 @@ if not L.cfg.text.enable then
   energyBarText:Hide()
 end
 
-local abs, max, min = math.abs, math.max, math.min
-energyBar:SetScript("OnUpdate", function(self, elapsed)
+energyBar:SetScript("OnUpdate", function(self)
   local _, class = UnitClass "player"
   local _, powerType = UnitPowerType "player"
   local maxPower = UnitPowerMax("player", UnitPowerType "player")
@@ -97,7 +97,6 @@ energyBar:SetScript("OnUpdate", function(self, elapsed)
 
   for bar, value in pairs(smoothing) do
     local cur = bar:GetValue()
-    local barmin, barmax = bar:GetMinMaxValues()
     local new = cur + min((value - cur) / 10, max(value - cur, limit))
 
     if new ~= new then
@@ -118,7 +117,7 @@ energyBar:RegisterEvent "PLAYER_SPECIALIZATION_CHANGED"
 energyBar:RegisterEvent "UNIT_AURA"
 energyBar:RegisterEvent "UNIT_POWER_FREQUENT"
 energyBar:RegisterEvent "TRAIT_CONFIG_UPDATED"
-energyBar:SetScript("OnEvent", function(self, event, ...)
+energyBar:SetScript("OnEvent", function()
   local powerColor = powerColors[UnitPowerType "player"]
   energyBar:SetStatusBarColor(unpack(powerColor))
   energyBarText:SetText(UnitPower "player")
