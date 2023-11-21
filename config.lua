@@ -34,3 +34,9 @@ L.cfg = {
     pain = { 255 / 255, 110 / 255, 30 / 255, 1 },
   },
 }
+
+local _, class = UnitClass "player"
+
+if class == "ROGUE" then
+  L.cfg.width = 313
+end
