@@ -4,12 +4,12 @@ local LibStub = LibStub
 local LSM = LibStub "LibSharedMedia-3.0"
 
 L.cfg = {
-  height = 6,
+  height = 8,
   width = 353,
 
   pos = { a1 = "BOTTOM", a2 = "CENTER", af = "UIParent", x = 0, y = -158 },
 
-  texture = LSM:Fetch("statusbar", "SkullflowerNeon"),
+  texture = LSM:Fetch("statusbar", "SkullflowerGradient2"),
 
   text = {
     enable = false,
@@ -30,8 +30,7 @@ L.cfg = {
     lunarpower = { 195 / 255, 205 / 255, 240 / 255, 1 },
     maelstrom = { 0 / 255, 127 / 255, 255 / 255, 1 },
     insanity = { 65 / 255, 65 / 255, 65 / 255, 1 },
-    fury = { 255 / 255, 110 / 255, 30 / 255, 1 },
-    pain = { 255 / 255, 110 / 255, 30 / 255, 1 },
+    fury = { 184 / 255, 49 / 255, 243 / 255, 1 },
   },
 }
 

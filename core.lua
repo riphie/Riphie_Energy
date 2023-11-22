@@ -20,7 +20,6 @@ local powerColors = {
   [11] = L.cfg.colors.maelstrom,
   [13] = L.cfg.colors.insanity,
   [17] = L.cfg.colors.fury,
-  [18] = L.cfg.colors.pain,
 }
 
 local smoothing = {}
