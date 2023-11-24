@@ -37,5 +37,5 @@ L.cfg = {
 local _, class = UnitClass "player"
 
 if class == "ROGUE" then
-  L.cfg.width = 313
+  L.cfg.width = 313.5
 end
