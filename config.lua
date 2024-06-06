@@ -9,7 +9,7 @@ L.cfg = {
 
   pos = { a1 = "BOTTOM", a2 = "CENTER", af = "UIParent", x = 0, y = -158 },
 
-  texture = LSM:Fetch("statusbar", "SkullflowerGradient2"),
+  texture = LSM:Fetch("statusbar", "SkullflowerNeon"),
 
   text = {
     enable = false,
@@ -33,9 +33,3 @@ L.cfg = {
     fury = { 184 / 255, 49 / 255, 243 / 255, 1 },
   },
 }
-
-local _, class = UnitClass "player"
-
-if class == "ROGUE" then
-  L.cfg.width = 313.5
-end
