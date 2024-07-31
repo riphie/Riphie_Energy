@@ -5,7 +5,7 @@ local LSM = LibStub "LibSharedMedia-3.0"
 
 L.cfg = {
   height = 8,
-  width = 353,
+  width = 359.5,
 
   pos = { a1 = "BOTTOM", a2 = "CENTER", af = "UIParent", x = 0, y = -158 },
 
