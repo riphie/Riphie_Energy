@@ -5,9 +5,9 @@ local LSM = LibStub "LibSharedMedia-3.0"
 
 L.cfg = {
   height = 8,
-  width = 359.5,
+  width = 359,
 
-  pos = { a1 = "BOTTOM", a2 = "CENTER", af = "UIParent", x = 0, y = -158 },
+  pos = { a1 = "CENTER", a2 = "CENTER", af = "UIParent", x = 0, y = -155 },
 
   texture = LSM:Fetch("statusbar", "SkullflowerNeon"),
 
@@ -32,9 +32,3 @@ L.cfg = {
     [17] = { 184 / 255, 49 / 255, 243 / 255, 1 }, -- fury
   },
 }
-
-local _, class = UnitClass "player"
-
-if class == "SHAMAN" then
-  L.cfg.width = 358
-end
