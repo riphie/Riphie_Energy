@@ -3,6 +3,7 @@
 ## Title: Riphie Energy
 ## Author: Riphie
 ## RequiredDeps: SharedMedia_Riphie
+## IconTexture: Interface\AddOns\Riphie_Energy\media\monkey.tga
 
 config.lua
 core.lua

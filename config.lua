@@ -7,9 +7,9 @@ L.cfg = {
   height = 8,
   width = 359,
 
-  pos = { a1 = "CENTER", a2 = "CENTER", af = "UIParent", x = 0, y = -155 },
+  pos = { a1 = "CENTER", a2 = "CENTER", af = "UIParent", x = 0, y = -200 },
 
-  texture = LSM:Fetch("statusbar", "SkullflowerNeon"),
+  texture = LSM:Fetch("statusbar", "SkullflowerGradient"),
 
   text = {
     enable = false,
