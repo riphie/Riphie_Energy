@@ -10,32 +10,20 @@ local backdrop_tab = {
   insets = { left = 0, right = 0, top = 0, bottom = 0 },
 }
 
--- local powerColors = {
---   [0] = L.cfg.colors.mana,
---   [1] = L.cfg.colors.rage,
---   [2] = L.cfg.colors.focus,
---   [3] = L.cfg.colors.energy,
---   [6] = L.cfg.colors.runicpower,
---   [8] = L.cfg.colors.lunarpower,
---   [11] = L.cfg.colors.maelstrom,
---   [13] = L.cfg.colors.insanity,
---   [17] = L.cfg.colors.fury,
--- }
-
 local smoothing = {}
 
 local energyBarBg = CreateFrame("Frame", "Riphie_Energy", UIParent, "BackdropTemplate")
-PixelUtil.SetHeight(energyBarBg, L.cfg.height)
-PixelUtil.SetWidth(energyBarBg, L.cfg.width)
-PixelUtil.SetPoint(energyBarBg, L.cfg.pos.a1, L.cfg.pos.af, L.cfg.pos.a2, L.cfg.pos.x, L.cfg.pos.y, 1, 1)
+PixelUtil.SetHeight(energyBarBg, L.cfg.height, 0)
+PixelUtil.SetWidth(energyBarBg, L.cfg.width, 0)
+PixelUtil.SetPoint(energyBarBg, L.cfg.pos.a1, L.cfg.pos.af, L.cfg.pos.a2, L.cfg.pos.x, L.cfg.pos.y, 0, 0)
 energyBarBg:SetBackdrop(backdrop_tab)
 energyBarBg:SetBackdropColor(unpack(L.cfg.colors.bg))
 energyBarBg:SetBackdropBorderColor(0, 0, 0, 1)
 
 local energyBar = CreateFrame("StatusBar", "energyBar", energyBarBg)
 energyBar:SetStatusBarTexture(L.cfg.texture)
-PixelUtil.SetPoint(energyBar, "TOPLEFT", energyBarBg, "TOPLEFT", 1, -1, 1, 1)
-PixelUtil.SetPoint(energyBar, "BOTTOMRIGHT", energyBarBg, "BOTTOMRIGHT", -1, 1)
+PixelUtil.SetPoint(energyBar, "TOPLEFT", energyBarBg, "TOPLEFT", 1, -1, 0, 0)
+PixelUtil.SetPoint(energyBar, "BOTTOMRIGHT", energyBarBg, "BOTTOMRIGHT", -1, 1, 0, 0)
 
 energyBar.SetValue_ = energyBar.SetValue
 energyBar.SetValue = function(self, value)
@@ -55,8 +43,8 @@ PixelUtil.SetPoint(
   L.cfg.text.pos.a2,
   L.cfg.text.pos.x,
   L.cfg.text.pos.y,
-  1,
-  1
+  0,
+  0
 )
 energyBarText:SetJustifyH "CENTER"
 
