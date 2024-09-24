@@ -7,7 +7,7 @@ L.cfg = {
   height = 8,
   width = 359,
 
-  pos = { a1 = "CENTER", a2 = "CENTER", af = "UIParent", x = 0, y = -200 },
+  pos = { a1 = "CENTER", a2 = "CENTER", af = "UIParent", x = 0, y = -180 },
 
   texture = LSM:Fetch("statusbar", "SkullflowerGradient"),
 
@@ -19,7 +19,7 @@ L.cfg = {
   },
 
   colors = {
-    bg = { 0 / 255, 0 / 255, 0 / 255, 0.35 },
+    bg = { 0 / 255, 0 / 255, 0 / 255, 0.5 },
 
     [0] = { 0 / 255, 190 / 255, 230 / 255, 1 }, -- mana
     [1] = { 255 / 255, 0 / 255, 0 / 255, 1 }, -- rage
