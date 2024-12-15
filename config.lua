@@ -4,7 +4,7 @@ local LibStub = LibStub
 local LSM = LibStub "LibSharedMedia-3.0"
 
 L.cfg = {
-  height = 8,
+  height = 5,
   width = 359,
 
   pos = { a1 = "CENTER", a2 = "CENTER", af = "UIParent", x = 0, y = -180 },
@@ -21,7 +21,7 @@ L.cfg = {
   colors = {
     bg = { 0 / 255, 0 / 255, 0 / 255, 0.5 },
 
-    [0] = { 0 / 255, 190 / 255, 230 / 255, 1 }, -- mana
+    [0] = { 0 / 255, 163 / 255, 255 / 255, 1 }, -- mana
     [1] = { 255 / 255, 0 / 255, 0 / 255, 1 }, -- rage
     [2] = { 230 / 255, 140 / 255, 60 / 255, 1 }, -- focus
     [3] = { 246 / 255, 222 / 255, 32 / 255, 1 }, -- energy
