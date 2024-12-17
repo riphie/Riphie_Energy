@@ -4,7 +4,7 @@ local LibStub = LibStub
 local LSM = LibStub "LibSharedMedia-3.0"
 
 L.cfg = {
-  height = 5,
+  height = 6,
   width = 359,
 
   pos = { a1 = "CENTER", a2 = "CENTER", af = "UIParent", x = 0, y = -180 },
